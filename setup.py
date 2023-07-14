@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='shifter',
-    version='1.0.0',
+    version='1.0.1',
     author='Arsalan Kazmi',
     author_email='sonicspeed848@gmail.com',
     description='A module for shifting values to different destinations.',

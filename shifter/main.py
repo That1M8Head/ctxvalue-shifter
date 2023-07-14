@@ -3,7 +3,6 @@ main.py - shifter, implements the contextual shift function
 """
 
 import subprocess
-import sys
 
 def shift(origin, destination, filename=None):
     """
@@ -27,11 +26,11 @@ def shift(origin, destination, filename=None):
     if destination == 'stdout':
         print(origin)
     elif destination == 'exec':
-        subprocess.run(origin, shell=True)
+        subprocess.run(origin, shell=True, check=True)
     elif destination == 'file':
         if filename is None:
             raise ValueError("Missing 'file' parameter.")
-        with open(filename, 'w') as file:
+        with open(filename, 'w', encoding="UTF-8") as file:
             file.write(str(origin))
     else:
         globals()[destination] = origin
