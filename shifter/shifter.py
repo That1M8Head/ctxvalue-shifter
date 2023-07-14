@@ -20,7 +20,7 @@ def shift(origin, destination: str, filename=None):
         filename (optional): The filename to use when 'destination' is 'file'.
 
     Returns:
-        None, if destination is 'stdout', 'exec', or 'file'.
+        None, if destination is 'stdout', 'exec', 'file' or a variable.
         The 'origin' value, if destination is 'return'.
     """
 
