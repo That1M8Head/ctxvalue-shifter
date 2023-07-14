@@ -23,6 +23,7 @@ def shift(origin, destination, filename=None):
         None, if destination is 'stdout', 'exec', or 'file'.
         The 'origin' value, if destination is any other value.
     """
+
     if destination == 'stdout':
         print(origin)
     elif destination == 'exec':
