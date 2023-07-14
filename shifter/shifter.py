@@ -4,7 +4,7 @@ shifter - A Python module that implements a contextual "shift" function.
 
 import subprocess
 
-def shift(origin, destination, filename=None):
+def shift(origin, destination: str, filename=None):
     """
     Shifts the value of 'origin' to the specified 'destination'.
 
