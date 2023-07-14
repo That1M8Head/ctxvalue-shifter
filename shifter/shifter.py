@@ -1,5 +1,5 @@
 """
-main.py - shifter, implements the contextual shift function
+shifter - A Python module that implements a contextual "shift" function. 
 """
 
 import subprocess
