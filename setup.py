@@ -16,34 +16,37 @@ setup(
     python_requires='>=3.6',
     long_description="""Contextual Value Shifter is a Python module that implements a contextual "shift" function.
 
-## Usage
+Usage
+-----
 
-```python
-from cxvshifter import shift
+.. code:: python
 
-# Shifting to variables
-x = 5
-shift(10, 'x')
-print(x)
-# => 10
+   from cxvshifter import shift
 
-# Shifting to a file
-shift("hello", 'file', "hello.txt")
+   # Shifting to variables
+   x = 5
+   shift(10, 'x')
+   print(x)
+   # => 10
 
-# Shifting to stdout
-shift("Hello, shifting world!", 'stdout')
+   # Shifting to a file
+   shift("hello", 'file', "hello.txt")
 
-# Shifting to return
-shift(24, 'return')
-# -> 24
-```
+   # Shifting to stdout
+   shift("Hello, shifting world!", 'stdout')
 
-## Improper usage
+   # Shifting to return
+   shift(24, 'return')
+   # -> 24
 
-```python
-x = 5
-shift(10, x)
-# Will attempt to shift to a variable named 5
-# In ctxvalue-shifter, this will result in a TypeError
-```""",
+Improper usage
+--------------
+
+.. code:: python
+
+   x = 5
+   shift(10, x)
+   # Will attempt to shift to a variable named 5
+   # In ctxvalue-shifter, this will result in a TypeError
+""",
 )
