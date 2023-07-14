@@ -4,36 +4,47 @@ shifter - A Python module that implements a contextual "shift" function.
 
 import subprocess
 
-def shift(origin, destination: str, filename=None):
+def shift(origin, destination, filename=None):
     """
-    Shifts the value of 'origin' to the specified 'destination'.
+    Shifts the value of `origin` to the specified `destination`.
 
-    If 'destination' is 'stdout', the 'origin' value is printed to the standard output.
-    If 'destination' is 'exec', the 'origin' value is executed as a command using subprocess.
-    If 'destination' is 'file', the 'origin' value is written to a file.
-    If 'destination' is 'return', the 'origin' is simply returned.
-    If 'destination' is any other value, the 'origin' value is assigned to a variable.
+    `destination` options:
+    - `'stdout'`: Prints `origin` to standard output.
+    - `'exec'`: Executes `origin` as a command using subprocess.
+    - `'file'`: Writes `origin` to a file.
+    - `'return'`: Returns `origin`.
 
-    Args:
-        origin: Any value to be shifted.
-        destination: The target for shifting the 'origin' value.
-        filename (optional): The filename to use when 'destination' is 'file'.
+    If `destination` is `'return'`, shift returns `origin`.
 
-    Returns:
-        None, if destination is 'stdout', 'exec', 'file' or a variable.
-        The 'origin' value, if destination is 'return'.
+    Otherwise, shift returns `None`.
     """
+
+    # We make sure destination is str, to prevent abuse
+    # and to make sure they're doing it right
+    if destination is not str:
+        raise TypeError("`destination` is not string.")
 
     if destination == 'stdout':
         print(origin)
+
     elif destination == 'exec':
+        # If origin isn't str, that probably isn't good
+        if origin is not str:
+            raise TypeError("'exec' specified, but `origin` is not a string.")
+
         subprocess.run(origin, shell=True, check=True)
+
     elif destination == 'file':
         if filename is None:
             raise ValueError("Missing 'file' parameter.")
+
         with open(filename, 'w', encoding="UTF-8") as file:
             file.write(str(origin))
+
     elif destination == 'return':
         return origin
+
     else:
         globals()[destination] = origin
+
+    return None
