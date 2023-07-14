@@ -27,3 +27,12 @@ x = 5
 shift(10, x)
 # will attempt to shift to a variable named 5
 ```
+
+## Questions
+
++ Q: **Uhhh, first off, why?**
+    + A: HAHAHA, PYTHON GO WEEEEE
++ Q: **No seriously. Why make something so useless?**
+    + A: Because it's fun.
++ Q: **Why does `destination` have to be string?**
+    + A: That's how ~~mafia~~ Python works.
