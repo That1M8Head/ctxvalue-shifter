@@ -21,7 +21,7 @@ def shift(origin, destination, filename=None):
 
     Returns:
         None, if destination is 'stdout', 'exec', or 'file'.
-        The 'origin' value, if destination is any other value.
+        The 'origin' value, if destination is 'return'.
     """
 
     if destination == 'stdout':
@@ -33,5 +33,7 @@ def shift(origin, destination, filename=None):
             raise ValueError("Missing 'file' parameter.")
         with open(filename, 'w', encoding="UTF-8") as file:
             file.write(str(origin))
+    elif destination == 'return':
+        return origin
     else:
         globals()[destination] = origin
