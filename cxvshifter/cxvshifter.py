@@ -1,5 +1,5 @@
 """
-shifter - A Python module that implements a contextual "shift" function. 
+Contextual Value Shifter - A Python module that implements a contextual "shift" function. 
 """
 
 import subprocess
