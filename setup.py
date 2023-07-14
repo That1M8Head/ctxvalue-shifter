@@ -8,7 +8,7 @@ from setuptools import setup
 
 setup(
     name='ctxvalue-shifter',
-    version='1.2.0',
+    version='1.2.1',
     author='Arsalan Kazmi',
     author_email='sonicspeed848@gmail.com',
     description='Contextual Value Shifter, a module for shifting values to different destinations.',
